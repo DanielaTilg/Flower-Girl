@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://dc0f34ow22apa"]
+
+[ext_resource type="Script" path="res://Scenes/Flowers/flower_narc_2.gd" id="1_cmn7l"]
+[ext_resource type="Texture2D" uid="uid://dmayi1nbv0158" path="res://images/flowers/flower_narc2_hover.png" id="2_k0yg3"]
+[ext_resource type="Texture2D" uid="uid://fq0qav4s4rol" path="res://images/flowers/flower_narc2_select.png" id="3_6chdj"]
+[ext_resource type="Texture2D" uid="uid://c31ga068oma4x" path="res://images/flowers/flower_narc2_full.png" id="4_vi3h1"]
+
+[node name="Flower narc2" type="Area2D"]
+script = ExtResource("1_cmn7l")
+
+[node name="narc2_hover" type="Sprite2D" parent="."]
+position = Vector2(-1, 0)
+texture = ExtResource("2_k0yg3")
+centered = false
+
+[node name="narc2_select" type="Sprite2D" parent="."]
+position = Vector2(-1, 0)
+texture = ExtResource("3_6chdj")
+centered = false
+
+[node name="narc2" type="Sprite2D" parent="."]
+texture = ExtResource("4_vi3h1")
+centered = false
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(91, 497, 59, 475, 53, 354, 61, 287, 33, 196, 19, 147, 13, 102, 51, 84, 61, 60, 96, 87, 139, 68, 138, 106, 130, 116, 165, 125, 154, 147, 158, 179, 124, 197, 112, 216, 88, 233, 77, 333, 80, 409)
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

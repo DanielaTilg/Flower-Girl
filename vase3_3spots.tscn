@@ -1,0 +1,119 @@
+[gd_scene load_steps=15 format=3 uid="uid://dvung0lcyol2w"]
+
+[ext_resource type="Script" path="res://vase3_3spots.gd" id="1_fsqo8"]
+[ext_resource type="Script" path="res://3flowers_slot_middle.gd" id="2_ckuw8"]
+[ext_resource type="Texture2D" uid="uid://dnpero3hw0sks" path="res://images/vases/vase3_bg.png" id="2_o2apv"]
+[ext_resource type="Script" path="res://3flowers_slot2.gd" id="3_6c0gw"]
+[ext_resource type="Script" path="res://3flowers_slot3.gd" id="4_22qfg"]
+[ext_resource type="Texture2D" uid="uid://m8etbf7xcu4r" path="res://images/vases/vase3_slot1_line.png" id="4_k524c"]
+[ext_resource type="Texture2D" uid="uid://c8di1eiojcca1" path="res://images/vases/vase3_slot1_fill.png" id="5_g4r4h"]
+[ext_resource type="Texture2D" uid="uid://cw847v53m4m7n" path="res://images/flowers/flower_blue_full.png" id="6_1bnif"]
+[ext_resource type="Texture2D" uid="uid://dq2touelkj60x" path="res://images/vases/vase3_slot2_line.png" id="7_ixsry"]
+[ext_resource type="Texture2D" uid="uid://bn3n10fgocu5b" path="res://images/vases/vase3_slot2_fill.png" id="8_da02j"]
+[ext_resource type="Texture2D" uid="uid://3x5ubgpr2fj1" path="res://images/flowers/flower_yellow_full.png" id="10_3if5d"]
+[ext_resource type="Texture2D" uid="uid://bobsuk3agj4sk" path="res://images/vases/vase3_slot3_line.png" id="10_tudje"]
+[ext_resource type="Texture2D" uid="uid://cl8usjft3w1rv" path="res://images/vases/vase3_slot3_fill.png" id="11_m7kme"]
+[ext_resource type="Texture2D" uid="uid://bgnlgo040l3mm" path="res://images/vases/vase3_ft.png" id="12_fuf8u"]
+
+[node name="Vase3_3spots" type="Node2D"]
+script = ExtResource("1_fsqo8")
+
+[node name="vase_back" type="Sprite2D" parent="."]
+position = Vector2(360, 40)
+texture = ExtResource("2_o2apv")
+centered = false
+
+[node name="slot_middle" type="Area2D" parent="." groups=["slots"]]
+position = Vector2(350, 28)
+script = ExtResource("2_ckuw8")
+
+[node name="line" type="Sprite2D" parent="slot_middle"]
+texture = ExtResource("4_k524c")
+centered = false
+
+[node name="fill" type="Sprite2D" parent="slot_middle"]
+texture = ExtResource("5_g4r4h")
+centered = false
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="slot_middle"]
+polygon = PackedVector2Array(225, 513, 212, 512, 240, 189, 217, 229, 193, 179, 192, 164, 178, 141, 151, 112, 177, 106, 197, 110, 183, 64, 216, 68, 232, 82, 245, 45, 269, 45, 280, 87, 305, 81, 327, 81, 325, 104, 303, 136, 332, 147, 319, 179, 295, 179, 292, 185, 292, 206, 258, 206, 249, 196)
+
+[node name="Container" type="Container" parent="slot_middle"]
+offset_left = 145.0
+offset_top = -14.0
+offset_right = 268.0
+offset_bottom = 402.0
+
+[node name="Sprite2D" type="Sprite2D" parent="slot_middle/Container"]
+visible = false
+scale = Vector2(1.1, 1.1)
+texture = ExtResource("6_1bnif")
+centered = false
+
+[node name="slot2" type="Area2D" parent="." groups=["slots"]]
+position = Vector2(360, 40)
+script = ExtResource("3_6c0gw")
+
+[node name="line" type="Sprite2D" parent="slot2"]
+texture = ExtResource("7_ixsry")
+centered = false
+
+[node name="fill" type="Sprite2D" parent="slot2"]
+texture = ExtResource("8_da02j")
+centered = false
+
+[node name="Container" type="Container" parent="slot2"]
+offset_left = 50.0
+offset_top = 79.0
+offset_right = 50.0
+offset_bottom = 79.0
+rotation = -0.329454
+
+[node name="Sprite2D" type="Sprite2D" parent="slot2/Container"]
+visible = false
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("10_3if5d")
+centered = false
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="slot2"]
+polygon = PackedVector2Array(180, 276, 153, 273, 139, 292, 122, 265, 92, 255, 102, 217, 118, 212, 110, 160, 140, 156, 168, 163, 172, 206, 197, 215, 207, 244, 188, 260, 290, 460, 278, 467)
+
+[node name="slot3" type="Area2D" parent="." groups=["slots"]]
+position = Vector2(360, 40)
+script = ExtResource("4_22qfg")
+
+[node name="line" type="Sprite2D" parent="slot3"]
+texture = ExtResource("10_tudje")
+centered = false
+
+[node name="fill" type="Sprite2D" parent="slot3"]
+texture = ExtResource("11_m7kme")
+centered = false
+
+[node name="Container" type="Container" parent="slot3"]
+offset_left = 248.0
+offset_top = 36.0
+offset_right = 337.0
+offset_bottom = 412.0
+rotation = 0.237134
+
+[node name="Sprite2D" type="Sprite2D" parent="slot3/Container"]
+visible = false
+scale = Vector2(0.95, 0.95)
+texture = ExtResource("10_3if5d")
+centered = false
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="slot3"]
+polygon = PackedVector2Array(234, 264, 256, 234, 265, 207, 296, 207, 311, 180, 340, 194, 335, 208, 362, 234, 338, 253, 343, 298, 311, 295, 296, 313, 285, 293, 171, 501, 152, 488, 270, 295, 260, 282, 271, 256, 240, 279)
+
+[node name="vase_front" type="Sprite2D" parent="."]
+position = Vector2(360, 40)
+texture = ExtResource("12_fuf8u")
+centered = false
+
+[connection signal="mouse_entered" from="slot_middle" to="slot_middle" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="slot_middle" to="slot_middle" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="slot2" to="slot2" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="slot2" to="slot2" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="slot3" to="slot3" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="slot3" to="slot3" method="_on_mouse_exited"]

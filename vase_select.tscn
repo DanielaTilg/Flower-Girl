@@ -1,0 +1,25 @@
+[gd_scene load_steps=2 format=3 uid="uid://b3j7re4hesn1g"]
+
+[ext_resource type="Script" path="res://vase_select.gd" id="1_yk1rl"]
+
+[node name="vase_select" type="CanvasLayer"]
+visible = false
+script = ExtResource("1_yk1rl")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+offset_left = 690.0
+offset_top = 542.0
+offset_right = 875.0
+offset_bottom = 634.0
+
+[node name="1flower" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+text = "1 FLOWER"
+
+[node name="3flowers" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "3 FLOWERS"
+
+[connection signal="pressed" from="HBoxContainer/1flower" to="." method="_on_1flower_pressed"]
+[connection signal="pressed" from="HBoxContainer/3flowers" to="." method="_on_3flowers_pressed"]

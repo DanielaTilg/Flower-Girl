@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://dijdsdlkixy05"]
+
+[ext_resource type="FontFile" uid="uid://dlapccbegkyq3" path="res://images/Le Cercle des Artisans.ttf" id="1_v05po"]
+[ext_resource type="Script" path="res://exit.gd" id="2_p51t2"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Exit" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1057.0
+offset_top = 594.0
+offset_right = 1101.0
+offset_bottom = 633.0
+theme_override_colors/font_hover_color = Color(0.647059, 0.686275, 0.94902, 1)
+theme_override_colors/font_color = Color(0.0627451, 0.113725, 0.411765, 1)
+theme_override_fonts/font = ExtResource("1_v05po")
+theme_override_font_sizes/font_size = 30
+text = "Exit"
+flat = true
+script = ExtResource("2_p51t2")
+
+[connection signal="pressed" from="Exit" to="Exit" method="_on_pressed"]

@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://b4jy68pd3bp14"]
+
+[ext_resource type="Script" path="res://Scenes/Flowers/flower_tul_3.gd" id="1_1y8pe"]
+[ext_resource type="Texture2D" uid="uid://ba2sfnwcs4e34" path="res://images/flowers/flower_tul23_hoverl.png" id="2_xyl7e"]
+[ext_resource type="Texture2D" uid="uid://bklrinr1bsm0g" path="res://images/flowers/flower_tul23_select.png" id="3_f3yp7"]
+[ext_resource type="Texture2D" uid="uid://ihvighjk0s13" path="res://images/flowers/flower_tul3_full.png" id="4_tvu3g"]
+
+[node name="Flower tul3" type="Area2D"]
+position = Vector2(1, 1)
+script = ExtResource("1_1y8pe")
+
+[node name="tul3_hover" type="Sprite2D" parent="."]
+texture = ExtResource("2_xyl7e")
+centered = false
+
+[node name="tul3_select" type="Sprite2D" parent="."]
+texture = ExtResource("3_f3yp7")
+centered = false
+
+[node name="tul3" type="Sprite2D" parent="."]
+position = Vector2(1, 0)
+texture = ExtResource("4_tvu3g")
+centered = false
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(55, 491, 39, 466, 60, 303, 22, 228, 12, 158, 22, 144, 15, 76, 33, 56, 124, 70, 126, 103, 123, 185, 96, 216, 86, 248, 78, 413)
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

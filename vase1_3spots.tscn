@@ -1,0 +1,52 @@
+[gd_scene load_steps=8 format=3 uid="uid://dqrowkh0f65u4"]
+
+[ext_resource type="Script" path="res://vase1_3spots.gd" id="1_15k6t"]
+[ext_resource type="Texture2D" uid="uid://cihbiux80crsj" path="res://images/vases/vase1_bg.png" id="2_jww65"]
+[ext_resource type="Script" path="res://1stflower_slot_1.gd" id="3_mb2ef"]
+[ext_resource type="Texture2D" uid="uid://j6q5rfkpych" path="res://images/vases/slot1_vase1n2_line.png" id="4_hq4yg"]
+[ext_resource type="Texture2D" uid="uid://dem2thg1l1w22" path="res://images/vases/slot1_vase1n2_fill.png" id="5_riph7"]
+[ext_resource type="Texture2D" uid="uid://bpmgs0gqyhjt5" path="res://images/flowers/flower_red_full.png" id="6_1n387"]
+[ext_resource type="Texture2D" uid="uid://bvmhvqvri48bg" path="res://images/vases/vase1_ft.png" id="7_g7g43"]
+
+[node name="Vase1_3spots" type="Node2D"]
+script = ExtResource("1_15k6t")
+
+[node name="vase_back" type="Sprite2D" parent="."]
+position = Vector2(360, 40)
+texture = ExtResource("2_jww65")
+centered = false
+
+[node name="1stflower_slot1" type="Area2D" parent="." groups=["slots"]]
+position = Vector2(340, 1)
+script = ExtResource("3_mb2ef")
+
+[node name="line" type="Sprite2D" parent="1stflower_slot1"]
+texture = ExtResource("4_hq4yg")
+centered = false
+
+[node name="fill" type="Sprite2D" parent="1stflower_slot1"]
+texture = ExtResource("5_riph7")
+centered = false
+
+[node name="Container" type="Container" parent="1stflower_slot1"]
+offset_left = 163.0
+offset_top = 57.0
+offset_right = 286.0
+offset_bottom = 473.0
+
+[node name="Sprite2D" type="Sprite2D" parent="1stflower_slot1/Container"]
+visible = false
+texture = ExtResource("6_1n387")
+centered = false
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="1stflower_slot1"]
+position = Vector2(7, 2)
+polygon = PackedVector2Array(231, 498, 202, 510, 227, 268, 213, 251, 175, 281, 174, 242, 157, 199, 179, 158, 190, 121, 211, 131, 250, 100, 259, 138, 308, 140, 306, 175, 286, 227, 244, 268)
+
+[node name="vase_front" type="Sprite2D" parent="."]
+position = Vector2(360, 40)
+texture = ExtResource("7_g7g43")
+centered = false
+
+[connection signal="mouse_entered" from="1stflower_slot1" to="1stflower_slot1" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="1stflower_slot1" to="1stflower_slot1" method="_on_mouse_exited"]

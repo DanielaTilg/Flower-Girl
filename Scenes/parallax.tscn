@@ -1,0 +1,36 @@
+[gd_scene load_steps=4 format=3 uid="uid://b7jvva2igypsi"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_nenia"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ccy86"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ks4r1"]
+
+[node name="Parallax" type="Node2D"]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+texture = SubResource("CompressedTexture2D_nenia")
+centered = false
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+texture_filter = 1
+motion_scale = Vector2(0.2, 0.2)
+motion_mirroring = Vector2(1152, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
+texture = SubResource("CompressedTexture2D_ccy86")
+centered = false
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
+texture_filter = 1
+motion_scale = Vector2(0.6, 0.6)
+motion_mirroring = Vector2(1152, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3"]
+texture = SubResource("CompressedTexture2D_ks4r1")
+centered = false

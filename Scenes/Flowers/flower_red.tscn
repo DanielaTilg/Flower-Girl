@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://die3pmua6x7cg"]
+
+[ext_resource type="Script" path="res://Scenes/Flowers/flower_red.gd" id="1_wbvtb"]
+[ext_resource type="Texture2D" uid="uid://bl76nap24rn74" path="res://images/flowers/flower_red_hover.png" id="2_1adag"]
+[ext_resource type="Texture2D" uid="uid://bpmgs0gqyhjt5" path="res://images/flowers/flower_red_full.png" id="3_rasme"]
+[ext_resource type="Texture2D" uid="uid://bobjox3hpoxbr" path="res://images/flowers/flower_red_select.png" id="3_sxrui"]
+
+[node name="Flower red" type="Area2D"]
+position = Vector2(1, 1)
+script = ExtResource("1_wbvtb")
+
+[node name="red_hover" type="Sprite2D" parent="."]
+texture = ExtResource("2_1adag")
+centered = false
+
+[node name="red_select" type="Sprite2D" parent="."]
+texture = ExtResource("3_sxrui")
+centered = false
+
+[node name="red" type="Sprite2D" parent="."]
+position = Vector2(1, 0)
+texture = ExtResource("3_rasme")
+centered = false
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(8, 35)
+scale = Vector2(2.39407, 2.53541)
+polygon = PackedVector2Array(31, 186, 20, 184, 24, 154, 20, 126, 24, 91, 10, 96, 9, 81, 10, 75, 16, 75, 8, 66, 9.60705, 49.3017, 4, 46, 11, 32, 20, 17, 37, 10, 56, 15, 62, 30, 61, 47, 49, 59, 55, 66, 50, 74, 58, 77, 47, 95, 33, 93, 31, 118, 31, 138, 35, 158)
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

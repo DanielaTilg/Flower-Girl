@@ -1,0 +1,69 @@
+[gd_scene load_steps=10 format=3 uid="uid://c6jp2recdifep"]
+
+[ext_resource type="Script" path="res://field.gd" id="1_5dyt5"]
+[ext_resource type="Texture2D" uid="uid://3r86x5gqrj8y" path="res://images/Parallax1_.png" id="2_755kn"]
+[ext_resource type="Texture2D" uid="uid://dd0pxiys8uolb" path="res://images/Parallax2_.png" id="3_ayc21"]
+[ext_resource type="Texture2D" uid="uid://dq6ixlx0benk7" path="res://images/Parallax3_.png" id="4_0syv8"]
+[ext_resource type="PackedScene" uid="uid://bsf3751b7ig1e" path="res://Scenes/player.tscn" id="5_ii3qc"]
+[ext_resource type="Texture2D" uid="uid://ck4ti5l0j342w" path="res://images/Parallax4_.png" id="6_xhr20"]
+[ext_resource type="Texture2D" uid="uid://cfgbbkjfgo353" path="res://images/Parallax5_.png" id="7_kocac"]
+[ext_resource type="PackedScene" uid="uid://i17e4swurn7f" path="res://canvas_layer.tscn" id="7_plpgq"]
+[ext_resource type="AudioStream" uid="uid://bqlcs6ofubs7k" path="res://Sound/spinopel-the-crunch-of-wood-411605_SHORTENED.mp3" id="9_s86ii"]
+
+[node name="Field" type="Node2D"]
+script = ExtResource("1_5dyt5")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.1, 0.1)
+motion_mirroring = Vector2(2304, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+texture = ExtResource("2_755kn")
+centered = false
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.2, 0.2)
+motion_mirroring = Vector2(2304, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
+texture = ExtResource("3_ayc21")
+centered = false
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.6, 0.6)
+motion_mirroring = Vector2(2304, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3"]
+texture = ExtResource("4_0syv8")
+centered = false
+
+[node name="Player" parent="." instance=ExtResource("5_ii3qc")]
+position = Vector2(576, 321)
+
+[node name="Parallax2D" type="Parallax2D" parent="."]
+repeat_size = Vector2(2304, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D"]
+texture = ExtResource("6_xhr20")
+centered = false
+
+[node name="Flowers" type="Node2D" parent="."]
+position = Vector2(640, 350)
+
+[node name="Parallax2D2" type="Parallax2D" parent="."]
+scroll_scale = Vector2(1.1, 1.1)
+repeat_size = Vector2(2304, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D2"]
+texture = ExtResource("7_kocac")
+centered = false
+
+[node name="CanvasLayer" parent="." instance=ExtResource("7_plpgq")]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+autoplay = true
+
+[node name="Cutting_Flowers" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_s86ii")

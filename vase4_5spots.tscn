@@ -1,0 +1,182 @@
+[gd_scene load_steps=20 format=3 uid="uid://r40iqhwbxsx7"]
+
+[ext_resource type="Texture2D" uid="uid://bcs62r4xq1cer" path="res://images/vases/vase4_bg.png" id="1_2fn88"]
+[ext_resource type="Script" path="res://slot5_middle.gd" id="2_2q5xa"]
+[ext_resource type="Texture2D" uid="uid://dlmxfh5e12plc" path="res://images/vases/vase4_slot1_line.png" id="2_p4h3u"]
+[ext_resource type="Texture2D" uid="uid://c7r4w2sbwykig" path="res://images/vases/vase4_slot1_fill.png" id="3_2de01"]
+[ext_resource type="Texture2D" uid="uid://bpmgs0gqyhjt5" path="res://images/flowers/flower_red_full.png" id="5_ljpfp"]
+[ext_resource type="Texture2D" uid="uid://bv1phtt2l4bqu" path="res://images/vases/vase4_slot2_line.png" id="5_x13ky"]
+[ext_resource type="Script" path="res://slot5_2.gd" id="6_8yehg"]
+[ext_resource type="Texture2D" uid="uid://wmx3oxi88qmm" path="res://images/vases/vase4_slot2_fill.png" id="6_bwk4c"]
+[ext_resource type="Texture2D" uid="uid://d3tl8hqycgvrq" path="res://images/vases/vase4_slot3_line.png" id="8_nqubf"]
+[ext_resource type="Texture2D" uid="uid://0ea2elya7ail" path="res://images/vases/vase4_slot3_fill.png" id="9_frn52"]
+[ext_resource type="Texture2D" uid="uid://ckp6i1ckk8stu" path="res://images/vases/vase4_slot4_line.png" id="10_02g0f"]
+[ext_resource type="Script" path="res://slot5_3.gd" id="10_6ehdc"]
+[ext_resource type="Texture2D" uid="uid://3x5ubgpr2fj1" path="res://images/flowers/flower_yellow_full.png" id="10_hb78g"]
+[ext_resource type="Texture2D" uid="uid://cou5a8lfsydp4" path="res://images/vases/vase4_slot4_fill.png" id="11_sxx5g"]
+[ext_resource type="Texture2D" uid="uid://mg3gjobdsey" path="res://images/vases/vase4_slot5_line.png" id="12_dndeq"]
+[ext_resource type="Texture2D" uid="uid://dlh25d4npdeuh" path="res://images/vases/vase4_slot5_fill.png" id="13_bijpc"]
+[ext_resource type="Script" path="res://slot5_4.gd" id="13_m3jch"]
+[ext_resource type="Texture2D" uid="uid://co6mosgmq6m17" path="res://images/vases/vase4_ft.png" id="14_nhcfn"]
+[ext_resource type="Script" path="res://slot5_5.gd" id="16_hbxdr"]
+
+[node name="Vase4_5spots" type="Node2D"]
+
+[node name="vase_back" type="Sprite2D" parent="."]
+position = Vector2(360, 40)
+texture = ExtResource("1_2fn88")
+centered = false
+
+[node name="slot5_middle" type="Area2D" parent="." groups=["slots"]]
+position = Vector2(371, 18)
+script = ExtResource("2_2q5xa")
+
+[node name="line" type="Sprite2D" parent="slot5_middle"]
+texture = ExtResource("2_p4h3u")
+centered = false
+
+[node name="fill" type="Sprite2D" parent="slot5_middle"]
+texture = ExtResource("3_2de01")
+centered = false
+
+[node name="Container" type="Container" parent="slot5_middle"]
+offset_left = 122.0
+offset_top = -2.0
+offset_right = 245.0
+offset_bottom = 414.0
+
+[node name="Sprite2D" type="Sprite2D" parent="slot5_middle/Container"]
+visible = false
+position = Vector2(6, -35)
+scale = Vector2(1.1, 1.1)
+texture = ExtResource("5_ljpfp")
+centered = false
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="slot5_middle"]
+polygon = PackedVector2Array(222, 484, 209, 385, 206, 279, 211, 191, 167, 205, 172, 165, 181, 147, 123, 119, 152, 90, 184, 88, 181, 47, 224, 54, 284, 50, 283, 87, 304, 117, 265, 159, 273, 204, 221, 225, 234, 461)
+
+[node name="slot5_2" type="Area2D" parent="." groups=["slots"]]
+position = Vector2(360, 40)
+script = ExtResource("6_8yehg")
+
+[node name="line" type="Sprite2D" parent="slot5_2"]
+texture = ExtResource("5_x13ky")
+centered = false
+
+[node name="fill" type="Sprite2D" parent="slot5_2"]
+texture = ExtResource("6_bwk4c")
+centered = false
+
+[node name="Container" type="Container" parent="slot5_2"]
+offset_left = -57.0
+offset_top = 120.0
+offset_right = -57.0
+offset_bottom = 120.0
+rotation = -0.634618
+
+[node name="Sprite2D" type="Sprite2D" parent="slot5_2/Container"]
+visible = false
+texture = ExtResource("10_hb78g")
+centered = false
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="slot5_2"]
+polygon = PackedVector2Array(279, 444, 275, 458, 215, 385, 160, 279, 138, 253, 113, 274, 93, 228, 67, 235, 58, 193, 72, 184, 61, 142, 79, 132, 108, 160, 138, 113, 168, 138, 155, 182, 194, 175, 193, 215, 162, 224, 166, 260, 228, 377)
+
+[node name="slot5_3" type="Area2D" parent="." groups=["slots"]]
+position = Vector2(360, 40)
+script = ExtResource("10_6ehdc")
+
+[node name="line" type="Sprite2D" parent="slot5_3"]
+texture = ExtResource("8_nqubf")
+centered = false
+
+[node name="fill" type="Sprite2D" parent="slot5_3"]
+texture = ExtResource("9_frn52")
+centered = false
+
+[node name="Container" type="Container" parent="slot5_3"]
+offset_left = 295.0
+offset_top = 10.0
+offset_right = 384.0
+offset_bottom = 386.0
+rotation = 0.301
+
+[node name="Sprite2D" type="Sprite2D" parent="slot5_3/Container"]
+visible = false
+texture = ExtResource("5_ljpfp")
+centered = false
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="slot5_3"]
+polygon = PackedVector2Array(226, 455, 208, 461, 248, 343, 278, 263, 276, 232, 290, 204, 266, 178, 299, 153, 331, 142, 360, 158, 396, 177, 377, 202, 372, 224, 342, 241, 335, 269, 304, 267, 249, 385)
+
+[node name="slot5_4" type="Area2D" parent="." groups=["slots"]]
+position = Vector2(360, 40)
+script = ExtResource("13_m3jch")
+
+[node name="line" type="Sprite2D" parent="slot5_4"]
+texture = ExtResource("10_02g0f")
+centered = false
+
+[node name="fill" type="Sprite2D" parent="slot5_4"]
+texture = ExtResource("11_sxx5g")
+centered = false
+
+[node name="Container" type="Container" parent="slot5_4"]
+offset_left = 62.0
+offset_top = 116.0
+offset_right = 151.0
+offset_bottom = 492.0
+rotation = -0.297686
+
+[node name="Sprite2D" type="Sprite2D" parent="slot5_4/Container"]
+visible = false
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("5_ljpfp")
+centered = false
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="slot5_4"]
+polygon = PackedVector2Array(255, 482, 244, 495, 202, 388, 188, 301, 167, 293, 145, 301, 139, 272, 147, 254, 121, 238, 133, 210, 153, 194, 180, 190, 214, 198, 212, 216, 237, 234, 204, 264, 207, 295, 204, 316, 225, 404)
+
+[node name="slot5_5" type="Area2D" parent="." groups=["slots"]]
+position = Vector2(360, 40)
+script = ExtResource("16_hbxdr")
+
+[node name="line" type="Sprite2D" parent="slot5_5"]
+texture = ExtResource("12_dndeq")
+centered = false
+
+[node name="fill" type="Sprite2D" parent="slot5_5"]
+texture = ExtResource("13_bijpc")
+centered = false
+
+[node name="Container" type="Container" parent="slot5_5"]
+offset_left = 225.0
+offset_top = 112.0
+offset_right = 314.0
+offset_bottom = 488.0
+rotation = 0.237134
+
+[node name="Sprite2D" type="Sprite2D" parent="slot5_5/Container"]
+visible = false
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("5_ljpfp")
+centered = false
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="slot5_5"]
+polygon = PackedVector2Array(209, 513, 191, 516, 197, 405, 230, 311, 202, 297, 213, 262, 221, 214, 253, 209, 285, 220, 315, 261, 279, 293, 261, 329, 245, 326, 223, 384, 214, 460)
+
+[node name="vase_front" type="Sprite2D" parent="."]
+position = Vector2(360, 40)
+texture = ExtResource("14_nhcfn")
+centered = false
+
+[connection signal="mouse_entered" from="slot5_middle" to="slot5_middle" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="slot5_middle" to="slot5_middle" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="slot5_2" to="slot5_2" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="slot5_2" to="slot5_2" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="slot5_3" to="slot5_3" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="slot5_3" to="slot5_3" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="slot5_4" to="slot5_4" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="slot5_4" to="slot5_4" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="slot5_5" to="slot5_5" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="slot5_5" to="slot5_5" method="_on_mouse_exited"]

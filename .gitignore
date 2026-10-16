@@ -1,16 +1,40 @@
 # Godot 4+ specific ignores
 .godot/
-.nomedia
+/android/
 
-# Godot-specific ignores
-.import/
-export.cfg
-export_credentials.cfg
+/Sound
+/images
 
-# Imported translations (automatically generated from CSV files)
-*.translation
+# Images
+*.png
+*.jpg
+*.jpeg
+*.webp
+*.bmp
+*.svg
 
-# Mono-specific ignores
-.mono/
-data_*/
-mono_crash.*.json
+# Audio
+*.wav
+*.mp3
+*.ogg
+*.flac
+*.aac
+*.m4a
+
+# Fonts
+*.ttf
+*.otf
+*.woff
+*.woff2
+*.fnt
+
+# Exported game builds
+*.zip
+*.exe
+*.pck
+*.dll
+
+# Web exports
+*.wasm
+*.js
+*.html

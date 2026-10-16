@@ -1,0 +1,49 @@
+[gd_scene load_steps=7 format=3 uid="uid://cv8qk038soej8"]
+
+[ext_resource type="Texture2D" uid="uid://0ep8cp05he5m" path="res://images/vases/vase2_bg.png" id="1_tf3ap"]
+[ext_resource type="Script" path="res://1flower_slot_4.gd" id="2_byxmv"]
+[ext_resource type="Texture2D" uid="uid://j6q5rfkpych" path="res://images/vases/slot1_vase1n2_line.png" id="3_huwom"]
+[ext_resource type="Texture2D" uid="uid://dem2thg1l1w22" path="res://images/vases/slot1_vase1n2_fill.png" id="4_6p0id"]
+[ext_resource type="Texture2D" uid="uid://drydaw0sykq6t" path="res://images/vases/vase2_ft.png" id="5_h8vtf"]
+[ext_resource type="Texture2D" uid="uid://cw847v53m4m7n" path="res://images/flowers/flower_blue_full.png" id="5_ne3iw"]
+
+[node name="Vase2_1spot" type="Node2D"]
+
+[node name="vase_back" type="Sprite2D" parent="."]
+position = Vector2(360, 40)
+texture = ExtResource("1_tf3ap")
+centered = false
+
+[node name="slot4" type="Area2D" parent="." groups=["slots"]]
+position = Vector2(360, 40)
+script = ExtResource("2_byxmv")
+
+[node name="line" type="Sprite2D" parent="slot4"]
+texture = ExtResource("3_huwom")
+centered = false
+
+[node name="fill" type="Sprite2D" parent="slot4"]
+texture = ExtResource("4_6p0id")
+centered = false
+
+[node name="Container" type="Container" parent="slot4"]
+offset_left = 153.0
+offset_top = 3.0
+offset_right = 153.0
+offset_bottom = 3.0
+
+[node name="Sprite2D" type="Sprite2D" parent="slot4/Container"]
+visible = false
+texture = ExtResource("5_ne3iw")
+centered = false
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="slot4"]
+polygon = PackedVector2Array(182, 267, 175, 232, 180, 204, 159, 167, 178, 162, 184, 127, 225, 142, 254, 108, 261, 158, 302, 150, 294, 194, 304, 226, 264, 239, 247, 271, 216, 520, 200, 511, 225, 262, 208, 249, 189, 278)
+
+[node name="vase_front" type="Sprite2D" parent="."]
+position = Vector2(360, 40)
+texture = ExtResource("5_h8vtf")
+centered = false
+
+[connection signal="mouse_entered" from="slot4" to="slot4" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="slot4" to="slot4" method="_on_mouse_exited"]

@@ -1,0 +1,193 @@
+[gd_scene load_steps=11 format=3 uid="uid://bpcgktt3rx8k7"]
+
+[ext_resource type="Texture2D" uid="uid://c0rcf5v2jh4ao" path="res://images/Background_Dressup.png" id="1_5u0y0"]
+[ext_resource type="Script" path="res://tutorial.gd" id="1_q75du"]
+[ext_resource type="Texture2D" uid="uid://bmcv1f1utrxa6" path="res://images/1.png" id="2_ygs8q"]
+[ext_resource type="Texture2D" uid="uid://b35o2tmfj324d" path="res://images/2.png" id="3_p4q4s"]
+[ext_resource type="Texture2D" uid="uid://ct2ootykt6tot" path="res://images/3.png" id="4_wses6"]
+[ext_resource type="Texture2D" uid="uid://g1swoovnntp" path="res://images/4.png" id="5_dyq2m"]
+[ext_resource type="FontFile" uid="uid://dlapccbegkyq3" path="res://images/Le Cercle des Artisans.ttf" id="6_viwrd"]
+[ext_resource type="PackedScene" uid="uid://dijdsdlkixy05" path="res://exit.tscn" id="8_a1f8y"]
+[ext_resource type="Texture2D" uid="uid://bpbu5hd3ugs3e" path="res://images/button_dressup.png" id="9_6g7we"]
+[ext_resource type="AudioStream" uid="uid://85yowxocy4ib" path="res://Sound/freesoundeffects-button-click-289742.mp3" id="10_8eay5"]
+
+[node name="Tutorial" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+script = ExtResource("1_q75du")
+
+[node name="background" type="Sprite2D" parent="."]
+texture = ExtResource("1_5u0y0")
+centered = false
+
+[node name="buttonclick" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_8eay5")
+
+[node name="Control" parent="." instance=ExtResource("8_a1f8y")]
+layout_mode = 1
+mouse_filter = 1
+
+[node name="Back" type="Button" parent="."]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 13.0
+offset_right = 135.0
+offset_bottom = 112.0
+mouse_filter = 1
+theme_override_colors/icon_hover_color = Color(0.647059, 0.686275, 0.94902, 1)
+icon = ExtResource("9_6g7we")
+flat = true
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 100.0
+offset_right = 94.0
+offset_bottom = 131.0
+theme_override_colors/font_color = Color(0.0627451, 0.113725, 0.411765, 1)
+theme_override_fonts/font = ExtResource("6_viwrd")
+theme_override_font_sizes/font_size = 30
+text = "Back"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -417.0
+offset_top = -224.0
+offset_right = 455.0
+offset_bottom = 284.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Images" type="VBoxContainer" parent="ScrollContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 25
+
+[node name="Sprite2D" type="TextureRect" parent="ScrollContainer/HBoxContainer/Images"]
+layout_mode = 2
+texture = ExtResource("2_ygs8q")
+expand_mode = 5
+
+[node name="Sprite2D2" type="TextureRect" parent="ScrollContainer/HBoxContainer/Images"]
+layout_mode = 2
+texture = ExtResource("3_p4q4s")
+expand_mode = 5
+
+[node name="Sprite2D3" type="TextureRect" parent="ScrollContainer/HBoxContainer/Images"]
+layout_mode = 2
+texture = ExtResource("4_wses6")
+expand_mode = 5
+
+[node name="Sprite2D4" type="TextureRect" parent="ScrollContainer/HBoxContainer/Images"]
+layout_mode = 2
+texture = ExtResource("5_dyq2m")
+expand_mode = 5
+
+[node name="Text" type="VBoxContainer" parent="ScrollContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 16
+
+[node name="TextureRect" type="ColorRect" parent="ScrollContainer/HBoxContainer/Text"]
+layout_mode = 2
+size_flags_vertical = 3
+color = Color(1, 0.964706, 0.94902, 1)
+
+[node name="Label" type="Label" parent="ScrollContainer/HBoxContainer/Text/TextureRect"]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 50.0
+offset_right = 411.0
+offset_bottom = 149.0
+theme_override_colors/font_color = Color(0.0627451, 0.113725, 0.411765, 1)
+theme_override_fonts/font = ExtResource("6_viwrd")
+theme_override_font_sizes/font_size = 30
+text = "Use the arrow keys on your 
+keyboard to walk left and right:  
+<--   -->"
+
+[node name="Label2" type="Label" parent="ScrollContainer/HBoxContainer/Text/TextureRect"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 198.0
+offset_right = 409.0
+offset_bottom = 297.0
+theme_override_colors/font_color = Color(0.0627451, 0.113725, 0.411765, 1)
+theme_override_fonts/font = ExtResource("6_viwrd")
+theme_override_font_sizes/font_size = 30
+text = "Click on a flower to pick it up."
+
+[node name="TextureRect2" type="ColorRect" parent="ScrollContainer/HBoxContainer/Text"]
+layout_mode = 2
+size_flags_vertical = 3
+color = Color(1, 0.964706, 0.94902, 1)
+
+[node name="Label" type="Label" parent="ScrollContainer/HBoxContainer/Text/TextureRect2"]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 72.0
+offset_right = 411.0
+offset_bottom = 239.0
+theme_override_colors/font_color = Color(0.0627451, 0.113725, 0.411765, 1)
+theme_override_fonts/font = ExtResource("6_viwrd")
+theme_override_font_sizes/font_size = 30
+text = "You can arrange your flowers
+ in beautiful bouquets.
+
+First, click on a flower 
+to select it."
+
+[node name="TextureRect3" type="ColorRect" parent="ScrollContainer/HBoxContainer/Text"]
+layout_mode = 2
+size_flags_vertical = 3
+color = Color(1, 0.964706, 0.94902, 1)
+
+[node name="Label" type="Label" parent="ScrollContainer/HBoxContainer/Text/TextureRect3"]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 72.0
+offset_right = 411.0
+offset_bottom = 239.0
+theme_override_colors/font_color = Color(0.0627451, 0.113725, 0.411765, 1)
+theme_override_fonts/font = ExtResource("6_viwrd")
+theme_override_font_sizes/font_size = 30
+text = "Then pick a spot in the vase
+ to place it.
+
+You can click on a flower in
+the vase to put it back."
+
+[node name="TextureRect4" type="ColorRect" parent="ScrollContainer/HBoxContainer/Text"]
+layout_mode = 2
+size_flags_vertical = 3
+color = Color(1, 0.964706, 0.94902, 1)
+
+[node name="Label" type="Label" parent="ScrollContainer/HBoxContainer/Text/TextureRect4"]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 72.0
+offset_right = 411.0
+offset_bottom = 239.0
+theme_override_colors/font_color = Color(0.0627451, 0.113725, 0.411765, 1)
+theme_override_fonts/font = ExtResource("6_viwrd")
+theme_override_font_sizes/font_size = 30
+text = "Sell your bouquet to earn
+Flower Dollars and unlock 
+new vases!"
+
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]

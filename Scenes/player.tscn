@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=3 uid="uid://bsf3751b7ig1e"]
+
+[ext_resource type="Script" path="res://player.gd" id="1_ucmn7"]
+[ext_resource type="Texture2D" uid="uid://dd6327texjo1u" path="res://images/player/body.png" id="2_gyhco"]
+[ext_resource type="Texture2D" uid="uid://bida01f7a5x13" path="res://images/player/outfit3.png" id="3_g5nsx"]
+[ext_resource type="AudioStream" uid="uid://dmk72yci2vxkh" path="res://Sound/freesound_community-walking-on-dried-grass-30049_SHORTENED.mp3" id="3_m58ng"]
+[ext_resource type="Texture2D" uid="uid://vfho2js0uepy" path="res://images/player/hair2.png" id="4_6m678"]
+
+[node name="Player" type="CharacterBody2D"]
+position = Vector2(579, 326)
+script = ExtResource("1_ucmn7")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="body" type="Sprite2D" parent="."]
+texture = ExtResource("2_gyhco")
+
+[node name="dress" type="Sprite2D" parent="."]
+texture = ExtResource("3_g5nsx")
+
+[node name="head" type="Sprite2D" parent="."]
+texture = ExtResource("4_6m678")
+
+[node name="basket" type="Sprite2D" parent="."]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_m58ng")
+parameters/looping = false

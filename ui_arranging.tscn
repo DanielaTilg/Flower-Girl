@@ -1,0 +1,554 @@
+[gd_scene load_steps=24 format=3 uid="uid://dcmdugg450s0"]
+
+[ext_resource type="PackedScene" uid="uid://d2jx3nc22megj" path="res://Scenes/Flowers/flower_yellow.tscn" id="1_0h1is"]
+[ext_resource type="Script" path="res://ui_arranging.gd" id="1_x8ue7"]
+[ext_resource type="Texture2D" uid="uid://c5pkbv1itybi3" path="res://images/button_flower_bg.png" id="2_djifm"]
+[ext_resource type="FontFile" uid="uid://dlapccbegkyq3" path="res://images/Le Cercle des Artisans.ttf" id="2_gyg2s"]
+[ext_resource type="PackedScene" uid="uid://die3pmua6x7cg" path="res://Scenes/Flowers/flower_red.tscn" id="2_m6vys"]
+[ext_resource type="PackedScene" uid="uid://dx60itmngt1l3" path="res://Scenes/Flowers/flower_blue.tscn" id="3_htcc0"]
+[ext_resource type="Texture2D" uid="uid://bx1at23j2xdem" path="res://images/FlowerDollar.png" id="5_2rihq"]
+[ext_resource type="Texture2D" uid="uid://dmn4ui02y68vt" path="res://images/vases/vase1_complete.png" id="5_6ncvd"]
+[ext_resource type="Texture2D" uid="uid://cimcsyj14cv4v" path="res://images/vases/vase2_complete_bw.png" id="6_o6ol6"]
+[ext_resource type="Texture2D" uid="uid://dycmm6cnmivqu" path="res://images/button_field.png" id="6_ordmn"]
+[ext_resource type="PackedScene" uid="uid://cfe8oas8kj2ei" path="res://Scenes/Flowers/flower_narc1.tscn" id="7_1n834"]
+[ext_resource type="Texture2D" uid="uid://cw8t4dwny780f" path="res://images/vases/vase3_complete_bw.png" id="7_c4wqv"]
+[ext_resource type="Texture2D" uid="uid://bn62sudjv4k8q" path="res://images/vases/vase4_complete_bw.png" id="8_3mx45"]
+[ext_resource type="AudioStream" uid="uid://bbk5sop37i8tk" path="res://Sound/homemade_sfx-water-drops-falling-272425_SHORTENED.mp3" id="11_d7vov"]
+[ext_resource type="AudioStream" uid="uid://b4phnsy4i46bv" path="res://Sound/gargamel10-rustling-leaves-378798_SHORTENED.mp3" id="12_k364m"]
+[ext_resource type="AudioStream" uid="uid://rqovktsh87h1" path="res://Sound/u_byub5wd934-cashier-quotka-chingquot-sound-effect-129698_SHORTENED.mp3" id="13_xm2dq"]
+[ext_resource type="AudioStream" uid="uid://85yowxocy4ib" path="res://Sound/freesoundeffects-button-click-289742.mp3" id="14_q2311"]
+[ext_resource type="PackedScene" uid="uid://dijdsdlkixy05" path="res://exit.tscn" id="15_xuw3f"]
+[ext_resource type="PackedScene" uid="uid://dc0f34ow22apa" path="res://Scenes/Flowers/flower_narc2.tscn" id="19_wjde0"]
+[ext_resource type="PackedScene" uid="uid://bm23by3yascv3" path="res://Scenes/Flowers/flower_tul1.tscn" id="20_0f7iq"]
+[ext_resource type="PackedScene" uid="uid://c78rd1flrkv8q" path="res://Scenes/Flowers/flower_tul2.tscn" id="21_j3d27"]
+[ext_resource type="PackedScene" uid="uid://b4jy68pd3bp14" path="res://Scenes/Flowers/flower_tul3.tscn" id="22_m88ve"]
+
+[sub_resource type="Theme" id="Theme_08npg"]
+
+[node name="UI_arranging" type="CanvasLayer"]
+script = ExtResource("1_x8ue7")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_direction = 3
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -232.0
+offset_top = 123.0
+offset_right = -5.0
+offset_bottom = 618.0
+grow_horizontal = 0
+
+[node name="VBoxContainer" type="GridContainer" parent="ScrollContainer"]
+layout_direction = 2
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+columns = 2
+
+[node name="yellow_entry" type="Control" parent="ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(110, 140)
+layout_mode = 2
+mouse_filter = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="ScrollContainer/VBoxContainer/yellow_entry"]
+custom_minimum_size = Vector2(110, 140)
+layout_mode = 1
+offset_right = 110.0
+offset_bottom = 140.0
+
+[node name="Sprite2D" type="Sprite2D" parent="ScrollContainer/VBoxContainer/yellow_entry/MarginContainer"]
+position = Vector2(-5, 19)
+scale = Vector2(1.16901, 1.31944)
+texture = ExtResource("2_djifm")
+centered = false
+
+[node name="Label" type="Label" parent="ScrollContainer/VBoxContainer/yellow_entry/MarginContainer"]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_colors/font_color = Color(0.0627451, 0.113725, 0.411765, 1)
+theme_override_fonts/font = ExtResource("2_gyg2s")
+theme_override_font_sizes/font_size = 30
+
+[node name="Flower yellow" parent="ScrollContainer/VBoxContainer/yellow_entry/MarginContainer" groups=["flowers"] instance=ExtResource("1_0h1is")]
+position = Vector2(29, -34)
+rotation = 0.349066
+scale = Vector2(0.4, 0.4)
+
+[node name="red_entry" type="Control" parent="ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(110, 140)
+layout_mode = 2
+mouse_filter = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="ScrollContainer/VBoxContainer/red_entry"]
+custom_minimum_size = Vector2(110, 140)
+layout_mode = 1
+offset_right = 110.0
+offset_bottom = 140.0
+
+[node name="Sprite2D" type="Sprite2D" parent="ScrollContainer/VBoxContainer/red_entry/MarginContainer"]
+position = Vector2(-5, 19)
+scale = Vector2(1.16901, 1.31944)
+texture = ExtResource("2_djifm")
+centered = false
+
+[node name="Label" type="Label" parent="ScrollContainer/VBoxContainer/red_entry/MarginContainer"]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+theme = SubResource("Theme_08npg")
+theme_override_colors/font_color = Color(0.0627451, 0.113725, 0.411765, 1)
+theme_override_fonts/font = ExtResource("2_gyg2s")
+theme_override_font_sizes/font_size = 30
+
+[node name="Flower red" parent="ScrollContainer/VBoxContainer/red_entry/MarginContainer" groups=["flowers"] instance=ExtResource("2_m6vys")]
+position = Vector2(22, -28)
+rotation = 0.349066
+scale = Vector2(0.4, 0.4)
+
+[node name="blue_entry" type="Control" parent="ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(110, 140)
+layout_mode = 2
+mouse_filter = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="ScrollContainer/VBoxContainer/blue_entry"]
+custom_minimum_size = Vector2(110, 140)
+layout_mode = 1
+offset_right = 110.0
+offset_bottom = 140.0
+
+[node name="Sprite2D" type="Sprite2D" parent="ScrollContainer/VBoxContainer/blue_entry/MarginContainer"]
+position = Vector2(-5, 19)
+scale = Vector2(1.16901, 1.31944)
+texture = ExtResource("2_djifm")
+centered = false
+
+[node name="Label" type="Label" parent="ScrollContainer/VBoxContainer/blue_entry/MarginContainer"]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_colors/font_color = Color(0.0627451, 0.113725, 0.411765, 1)
+theme_override_fonts/font = ExtResource("2_gyg2s")
+theme_override_font_sizes/font_size = 30
+
+[node name="Flower blue" parent="ScrollContainer/VBoxContainer/blue_entry/MarginContainer" groups=["flowers"] instance=ExtResource("3_htcc0")]
+position = Vector2(27, -23)
+rotation = 0.329785
+scale = Vector2(0.4, 0.4)
+
+[node name="narc1_entry" type="Control" parent="ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(110, 140)
+layout_mode = 2
+mouse_filter = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="ScrollContainer/VBoxContainer/narc1_entry"]
+custom_minimum_size = Vector2(110, 140)
+layout_mode = 1
+offset_right = 110.0
+offset_bottom = 140.0
+
+[node name="Sprite2D" type="Sprite2D" parent="ScrollContainer/VBoxContainer/narc1_entry/MarginContainer"]
+position = Vector2(-5, 19)
+scale = Vector2(1.16901, 1.31944)
+texture = ExtResource("2_djifm")
+centered = false
+
+[node name="Label" type="Label" parent="ScrollContainer/VBoxContainer/narc1_entry/MarginContainer"]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_colors/font_color = Color(0.0627451, 0.113725, 0.411765, 1)
+theme_override_fonts/font = ExtResource("2_gyg2s")
+theme_override_font_sizes/font_size = 30
+
+[node name="Flower narc1" parent="ScrollContainer/VBoxContainer/narc1_entry/MarginContainer" groups=["flowers"] instance=ExtResource("7_1n834")]
+position = Vector2(34, -6)
+rotation = 0.367105
+scale = Vector2(0.35, 0.35)
+
+[node name="narc2_entry" type="Control" parent="ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(110, 140)
+layout_mode = 2
+mouse_filter = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="ScrollContainer/VBoxContainer/narc2_entry"]
+custom_minimum_size = Vector2(110, 140)
+layout_mode = 1
+offset_right = 110.0
+offset_bottom = 140.0
+
+[node name="Sprite2D" type="Sprite2D" parent="ScrollContainer/VBoxContainer/narc2_entry/MarginContainer"]
+position = Vector2(-5, 19)
+scale = Vector2(1.16901, 1.31944)
+texture = ExtResource("2_djifm")
+centered = false
+
+[node name="Label" type="Label" parent="ScrollContainer/VBoxContainer/narc2_entry/MarginContainer"]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_colors/font_color = Color(0.0627451, 0.113725, 0.411765, 1)
+theme_override_fonts/font = ExtResource("2_gyg2s")
+theme_override_font_sizes/font_size = 30
+
+[node name="Flower narc2" parent="ScrollContainer/VBoxContainer/narc2_entry/MarginContainer" groups=["flowers"] instance=ExtResource("19_wjde0")]
+position = Vector2(32, -14)
+rotation = 0.356079
+scale = Vector2(0.35, 0.35)
+
+[node name="tul1_entry" type="Control" parent="ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(110, 140)
+layout_mode = 2
+mouse_filter = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="ScrollContainer/VBoxContainer/tul1_entry"]
+custom_minimum_size = Vector2(110, 140)
+layout_mode = 1
+offset_right = 110.0
+offset_bottom = 140.0
+
+[node name="Sprite2D" type="Sprite2D" parent="ScrollContainer/VBoxContainer/tul1_entry/MarginContainer"]
+position = Vector2(-5, 19)
+scale = Vector2(1.16901, 1.31944)
+texture = ExtResource("2_djifm")
+centered = false
+
+[node name="Label" type="Label" parent="ScrollContainer/VBoxContainer/tul1_entry/MarginContainer"]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_colors/font_color = Color(0.0627451, 0.113725, 0.411765, 1)
+theme_override_fonts/font = ExtResource("2_gyg2s")
+theme_override_font_sizes/font_size = 30
+
+[node name="Flower tul1" parent="ScrollContainer/VBoxContainer/tul1_entry/MarginContainer" groups=["flowers"] instance=ExtResource("20_0f7iq")]
+position = Vector2(30, -4)
+rotation = 0.366082
+scale = Vector2(0.35, 0.35)
+
+[node name="tul2_entry" type="Control" parent="ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(110, 140)
+layout_mode = 2
+mouse_filter = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="ScrollContainer/VBoxContainer/tul2_entry"]
+custom_minimum_size = Vector2(110, 140)
+layout_mode = 1
+offset_right = 110.0
+offset_bottom = 140.0
+
+[node name="Sprite2D" type="Sprite2D" parent="ScrollContainer/VBoxContainer/tul2_entry/MarginContainer"]
+position = Vector2(-5, 19)
+scale = Vector2(1.16901, 1.31944)
+texture = ExtResource("2_djifm")
+centered = false
+
+[node name="Label" type="Label" parent="ScrollContainer/VBoxContainer/tul2_entry/MarginContainer"]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_colors/font_color = Color(0.0627451, 0.113725, 0.411765, 1)
+theme_override_fonts/font = ExtResource("2_gyg2s")
+theme_override_font_sizes/font_size = 30
+
+[node name="Flower tul2" parent="ScrollContainer/VBoxContainer/tul2_entry/MarginContainer" groups=["flowers"] instance=ExtResource("21_j3d27")]
+position = Vector2(28, -1)
+rotation = 0.324513
+scale = Vector2(0.35, 0.35)
+
+[node name="tul3_entry" type="Control" parent="ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(110, 140)
+layout_mode = 2
+mouse_filter = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="ScrollContainer/VBoxContainer/tul3_entry"]
+custom_minimum_size = Vector2(110, 140)
+layout_mode = 1
+offset_right = 110.0
+offset_bottom = 140.0
+
+[node name="Sprite2D" type="Sprite2D" parent="ScrollContainer/VBoxContainer/tul3_entry/MarginContainer"]
+position = Vector2(-5, 19)
+scale = Vector2(1.16901, 1.31944)
+texture = ExtResource("2_djifm")
+centered = false
+
+[node name="Label" type="Label" parent="ScrollContainer/VBoxContainer/tul3_entry/MarginContainer"]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_colors/font_color = Color(0.0627451, 0.113725, 0.411765, 1)
+theme_override_fonts/font = ExtResource("2_gyg2s")
+theme_override_font_sizes/font_size = 30
+
+[node name="Flower tul3" parent="ScrollContainer/VBoxContainer/tul3_entry/MarginContainer" groups=["flowers"] instance=ExtResource("22_m88ve")]
+position = Vector2(26, 3)
+rotation = 0.304212
+scale = Vector2(0.35, 0.35)
+
+[node name="Collect" type="Button" parent="."]
+offset_top = -1.0
+offset_right = 103.0
+offset_bottom = 104.0
+icon = ExtResource("6_ordmn")
+flat = true
+
+[node name="Sell" type="Button" parent="."]
+offset_left = 934.0
+offset_top = 135.0
+offset_right = 1089.0
+offset_bottom = 239.0
+theme_override_colors/font_disabled_color = Color(0.0627451, 0.113725, 0.411765, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.647059, 0.686275, 0.94902, 1)
+theme_override_colors/font_hover_color = Color(0.647059, 0.686275, 0.94902, 1)
+theme_override_colors/font_pressed_color = Color(0.0627451, 0.113725, 0.411765, 1)
+theme_override_colors/font_focus_color = Color(0.0627451, 0.113725, 0.411765, 1)
+theme_override_colors/font_color = Color(0.0627451, 0.113725, 0.411765, 1)
+theme_override_fonts/font = ExtResource("2_gyg2s")
+theme_override_font_sizes/font_size = 40
+text = "Sell 
+Bouquet"
+flat = true
+
+[node name="Money" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 945.0
+offset_top = 33.0
+offset_right = 1116.0
+offset_bottom = 77.0
+
+[node name="ColorRect" type="ColorRect" parent="Money"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -13.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 0.682353, 0.490196, 1)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Money"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -27.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Container" type="Container" parent="Money/HBoxContainer"]
+layout_mode = 2
+
+[node name="money" type="Sprite2D" parent="Money/HBoxContainer/Container"]
+position = Vector2(-60, -29)
+scale = Vector2(0.653061, 0.630137)
+texture = ExtResource("5_2rihq")
+centered = false
+
+[node name="number" type="Label" parent="Money/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_colors/font_color = Color(0.0627451, 0.113725, 0.411765, 1)
+theme_override_fonts/font = ExtResource("2_gyg2s")
+theme_override_font_sizes/font_size = 36
+text = "3.00"
+
+[node name="ScrollContainer2" type="ScrollContainer" parent="."]
+offset_left = 895.0
+offset_top = 282.0
+offset_right = 1130.0
+offset_bottom = 588.0
+
+[node name="HBoxContainer" type="GridContainer" parent="ScrollContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+columns = 2
+
+[node name="1flower1" type="Button" parent="ScrollContainer2/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "1 FLOWER"
+flat = true
+
+[node name="Sprite2D" type="Sprite2D" parent="ScrollContainer2/HBoxContainer/1flower1"]
+scale = Vector2(0.25, 0.268)
+texture = ExtResource("5_6ncvd")
+centered = false
+
+[node name="1flower" type="Button" parent="ScrollContainer2/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "1 FLOWER"
+flat = true
+
+[node name="Sprite2D" type="Sprite2D" parent="ScrollContainer2/HBoxContainer/1flower"]
+scale = Vector2(0.25, 0.267)
+texture = ExtResource("6_o6ol6")
+centered = false
+
+[node name="ColorRect" type="ColorRect" parent="ScrollContainer2/HBoxContainer/1flower"]
+layout_mode = 0
+offset_left = 35.0
+offset_top = 68.0
+offset_right = 105.0
+offset_bottom = 98.0
+color = Color(1, 0.682353, 0.490196, 1)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ScrollContainer2/HBoxContainer/1flower"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 12.0
+offset_top = 8.0
+offset_right = -15.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Container" type="Container" parent="ScrollContainer2/HBoxContainer/1flower/HBoxContainer"]
+layout_mode = 2
+
+[node name="money" type="Sprite2D" parent="ScrollContainer2/HBoxContainer/1flower/HBoxContainer/Container"]
+position = Vector2(-6.00003, 52)
+scale = Vector2(0.291038, 0.280822)
+texture = ExtResource("5_2rihq")
+centered = false
+
+[node name="number" type="Label" parent="ScrollContainer2/HBoxContainer/1flower/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_colors/font_color = Color(0.0627451, 0.113725, 0.411765, 1)
+theme_override_fonts/font = ExtResource("2_gyg2s")
+theme_override_font_sizes/font_size = 25
+text = "1.50"
+
+[node name="Node" type="Node" parent="ScrollContainer2/HBoxContainer/1flower"]
+
+[node name="3flowers" type="Button" parent="ScrollContainer2/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "3 FLOWERS"
+flat = true
+
+[node name="Sprite2D" type="Sprite2D" parent="ScrollContainer2/HBoxContainer/3flowers"]
+scale = Vector2(0.25, 0.267)
+texture = ExtResource("7_c4wqv")
+centered = false
+
+[node name="ColorRect" type="ColorRect" parent="ScrollContainer2/HBoxContainer/3flowers"]
+layout_mode = 1
+offset_left = 35.0
+offset_top = 68.0
+offset_right = 105.0
+offset_bottom = 98.0
+color = Color(1, 0.682353, 0.490196, 1)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ScrollContainer2/HBoxContainer/3flowers"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 12.0
+offset_top = 8.0
+offset_right = -15.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Container" type="Container" parent="ScrollContainer2/HBoxContainer/3flowers/HBoxContainer"]
+layout_mode = 2
+
+[node name="money" type="Sprite2D" parent="ScrollContainer2/HBoxContainer/3flowers/HBoxContainer/Container"]
+position = Vector2(-6.00003, 52)
+scale = Vector2(0.291038, 0.280822)
+texture = ExtResource("5_2rihq")
+centered = false
+
+[node name="number" type="Label" parent="ScrollContainer2/HBoxContainer/3flowers/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_colors/font_color = Color(0.0627451, 0.113725, 0.411765, 1)
+theme_override_fonts/font = ExtResource("2_gyg2s")
+theme_override_font_sizes/font_size = 25
+text = "4.00"
+
+[node name="5flowers" type="Button" parent="ScrollContainer2/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "5 FLOWERS"
+flat = true
+
+[node name="Sprite2D" type="Sprite2D" parent="ScrollContainer2/HBoxContainer/5flowers"]
+scale = Vector2(0.25, 0.267)
+texture = ExtResource("8_3mx45")
+centered = false
+
+[node name="ColorRect" type="ColorRect" parent="ScrollContainer2/HBoxContainer/5flowers"]
+layout_mode = 0
+offset_left = 35.0
+offset_top = 68.0
+offset_right = 105.0
+offset_bottom = 98.0
+color = Color(1, 0.682353, 0.490196, 1)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ScrollContainer2/HBoxContainer/5flowers"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 12.0
+offset_top = 8.0
+offset_right = -15.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Container" type="Container" parent="ScrollContainer2/HBoxContainer/5flowers/HBoxContainer"]
+layout_mode = 2
+
+[node name="money" type="Sprite2D" parent="ScrollContainer2/HBoxContainer/5flowers/HBoxContainer/Container"]
+position = Vector2(-8.00003, 49)
+scale = Vector2(0.291038, 0.280822)
+texture = ExtResource("5_2rihq")
+centered = false
+
+[node name="number" type="Label" parent="ScrollContainer2/HBoxContainer/5flowers/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_colors/font_color = Color(0.0627451, 0.113725, 0.411765, 1)
+theme_override_fonts/font = ExtResource("2_gyg2s")
+theme_override_font_sizes/font_size = 25
+text = "10.00"
+
+[node name="in_vase" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_d7vov")
+volume_db = 3.0
+
+[node name="backonstack" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_k364m")
+volume_db = 3.0
+
+[node name="money" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_xm2dq")
+volume_db = -10.0
+
+[node name="buttonclick" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("14_q2311")
+
+[node name="Control" parent="." instance=ExtResource("15_xuw3f")]
+mouse_filter = 2
+
+[connection signal="pressed" from="Collect" to="." method="_on_collect_pressed"]
+[connection signal="pressed" from="Sell" to="." method="_on_sell_pressed"]
+[connection signal="pressed" from="ScrollContainer2/HBoxContainer/1flower1" to="." method="_on_1flower1_pressed"]
+[connection signal="pressed" from="ScrollContainer2/HBoxContainer/1flower" to="." method="_on_1flower_pressed"]
+[connection signal="pressed" from="ScrollContainer2/HBoxContainer/3flowers" to="." method="_on_3flowers_pressed"]
+[connection signal="pressed" from="ScrollContainer2/HBoxContainer/5flowers" to="." method="_on_5flowers_pressed"]

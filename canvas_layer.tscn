@@ -1,0 +1,306 @@
+[gd_scene load_steps=17 format=3 uid="uid://i17e4swurn7f"]
+
+[ext_resource type="Script" path="res://canvas_layer.gd" id="1_5l7qo"]
+[ext_resource type="PackedScene" uid="uid://d2jx3nc22megj" path="res://Scenes/Flowers/flower_yellow.tscn" id="2_n5g18"]
+[ext_resource type="Texture2D" uid="uid://r7s4usfmrr3t" path="res://images/button_vase.png" id="2_p2q0x"]
+[ext_resource type="FontFile" uid="uid://dlapccbegkyq3" path="res://images/Le Cercle des Artisans.ttf" id="2_so0fs"]
+[ext_resource type="PackedScene" uid="uid://die3pmua6x7cg" path="res://Scenes/Flowers/flower_red.tscn" id="3_2iyog"]
+[ext_resource type="Texture2D" uid="uid://bpbu5hd3ugs3e" path="res://images/button_dressup.png" id="3_4v3t1"]
+[ext_resource type="PackedScene" uid="uid://dx60itmngt1l3" path="res://Scenes/Flowers/flower_blue.tscn" id="4_1fo4h"]
+[ext_resource type="Texture2D" uid="uid://c5pkbv1itybi3" path="res://images/button_flower_bg.png" id="4_k8arj"]
+[ext_resource type="AudioStream" uid="uid://85yowxocy4ib" path="res://Sound/freesoundeffects-button-click-289742.mp3" id="6_bl5a4"]
+[ext_resource type="PackedScene" uid="uid://dijdsdlkixy05" path="res://exit.tscn" id="7_2q5x3"]
+[ext_resource type="PackedScene" uid="uid://cfe8oas8kj2ei" path="res://Scenes/Flowers/flower_narc1.tscn" id="11_2s1f6"]
+[ext_resource type="PackedScene" uid="uid://dc0f34ow22apa" path="res://Scenes/Flowers/flower_narc2.tscn" id="12_xmack"]
+[ext_resource type="PackedScene" uid="uid://bm23by3yascv3" path="res://Scenes/Flowers/flower_tul1.tscn" id="13_tlbdh"]
+[ext_resource type="PackedScene" uid="uid://c78rd1flrkv8q" path="res://Scenes/Flowers/flower_tul2.tscn" id="14_4obv0"]
+[ext_resource type="PackedScene" uid="uid://b4jy68pd3bp14" path="res://Scenes/Flowers/flower_tul3.tscn" id="15_mjdh1"]
+
+[sub_resource type="Theme" id="Theme_unndk"]
+
+[node name="canvas_layer" type="CanvasLayer"]
+script = ExtResource("1_5l7qo")
+
+[node name="Button" type="Button" parent="."]
+offset_left = 1050.0
+offset_top = 2.0
+offset_right = 1153.0
+offset_bottom = 142.0
+icon = ExtResource("2_p2q0x")
+flat = true
+
+[node name="Dress" type="Button" parent="."]
+offset_left = 2.0
+offset_top = 8.0
+offset_right = 127.0
+offset_bottom = 107.0
+icon = ExtResource("3_4v3t1")
+flat = true
+
+[node name="buttonclick" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_bl5a4")
+
+[node name="Control" parent="." instance=ExtResource("7_2q5x3")]
+mouse_filter = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_direction = 3
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -232.0
+offset_top = 123.0
+offset_right = -5.0
+offset_bottom = 618.0
+grow_horizontal = 0
+
+[node name="VBoxContainer" type="GridContainer" parent="ScrollContainer"]
+layout_direction = 2
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+columns = 2
+
+[node name="yellow_entry" type="Control" parent="ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(110, 140)
+layout_mode = 2
+mouse_filter = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="ScrollContainer/VBoxContainer/yellow_entry"]
+custom_minimum_size = Vector2(110, 140)
+layout_mode = 1
+offset_right = 110.0
+offset_bottom = 140.0
+
+[node name="Sprite2D" type="Sprite2D" parent="ScrollContainer/VBoxContainer/yellow_entry/MarginContainer"]
+position = Vector2(-5, 19)
+scale = Vector2(1.16901, 1.31944)
+texture = ExtResource("4_k8arj")
+centered = false
+
+[node name="Label" type="Label" parent="ScrollContainer/VBoxContainer/yellow_entry/MarginContainer"]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_colors/font_color = Color(0.0627451, 0.113725, 0.411765, 1)
+theme_override_fonts/font = ExtResource("2_so0fs")
+theme_override_font_sizes/font_size = 30
+
+[node name="Flower yellow" parent="ScrollContainer/VBoxContainer/yellow_entry/MarginContainer" groups=["flowers"] instance=ExtResource("2_n5g18")]
+position = Vector2(29, -34)
+rotation = 0.349066
+scale = Vector2(0.4, 0.4)
+
+[node name="red_entry" type="Control" parent="ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(110, 140)
+layout_mode = 2
+mouse_filter = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="ScrollContainer/VBoxContainer/red_entry"]
+custom_minimum_size = Vector2(110, 140)
+layout_mode = 1
+offset_right = 110.0
+offset_bottom = 140.0
+
+[node name="Sprite2D" type="Sprite2D" parent="ScrollContainer/VBoxContainer/red_entry/MarginContainer"]
+position = Vector2(-5, 19)
+scale = Vector2(1.16901, 1.31944)
+texture = ExtResource("4_k8arj")
+centered = false
+
+[node name="Label" type="Label" parent="ScrollContainer/VBoxContainer/red_entry/MarginContainer"]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+theme = SubResource("Theme_unndk")
+theme_override_colors/font_color = Color(0.0627451, 0.113725, 0.411765, 1)
+theme_override_fonts/font = ExtResource("2_so0fs")
+theme_override_font_sizes/font_size = 30
+
+[node name="Flower red" parent="ScrollContainer/VBoxContainer/red_entry/MarginContainer" groups=["flowers"] instance=ExtResource("3_2iyog")]
+position = Vector2(22, -28)
+rotation = 0.349066
+scale = Vector2(0.4, 0.4)
+
+[node name="blue_entry" type="Control" parent="ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(110, 140)
+layout_mode = 2
+mouse_filter = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="ScrollContainer/VBoxContainer/blue_entry"]
+custom_minimum_size = Vector2(110, 140)
+layout_mode = 1
+offset_right = 110.0
+offset_bottom = 140.0
+
+[node name="Sprite2D" type="Sprite2D" parent="ScrollContainer/VBoxContainer/blue_entry/MarginContainer"]
+position = Vector2(-5, 19)
+scale = Vector2(1.16901, 1.31944)
+texture = ExtResource("4_k8arj")
+centered = false
+
+[node name="Label" type="Label" parent="ScrollContainer/VBoxContainer/blue_entry/MarginContainer"]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_colors/font_color = Color(0.0627451, 0.113725, 0.411765, 1)
+theme_override_fonts/font = ExtResource("2_so0fs")
+theme_override_font_sizes/font_size = 30
+
+[node name="Flower blue" parent="ScrollContainer/VBoxContainer/blue_entry/MarginContainer" groups=["flowers"] instance=ExtResource("4_1fo4h")]
+position = Vector2(27, -23)
+rotation = 0.329785
+scale = Vector2(0.4, 0.4)
+
+[node name="narc1_entry" type="Control" parent="ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(110, 140)
+layout_mode = 2
+mouse_filter = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="ScrollContainer/VBoxContainer/narc1_entry"]
+custom_minimum_size = Vector2(110, 140)
+layout_mode = 1
+offset_right = 110.0
+offset_bottom = 140.0
+
+[node name="Sprite2D" type="Sprite2D" parent="ScrollContainer/VBoxContainer/narc1_entry/MarginContainer"]
+position = Vector2(-5, 19)
+scale = Vector2(1.16901, 1.31944)
+texture = ExtResource("4_k8arj")
+centered = false
+
+[node name="Label" type="Label" parent="ScrollContainer/VBoxContainer/narc1_entry/MarginContainer"]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_colors/font_color = Color(0.0627451, 0.113725, 0.411765, 1)
+theme_override_fonts/font = ExtResource("2_so0fs")
+theme_override_font_sizes/font_size = 30
+
+[node name="Flower narc1" parent="ScrollContainer/VBoxContainer/narc1_entry/MarginContainer" groups=["flowers"] instance=ExtResource("11_2s1f6")]
+position = Vector2(34, -6)
+rotation = 0.367105
+scale = Vector2(0.35, 0.35)
+
+[node name="narc2_entry" type="Control" parent="ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(110, 140)
+layout_mode = 2
+mouse_filter = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="ScrollContainer/VBoxContainer/narc2_entry"]
+custom_minimum_size = Vector2(110, 140)
+layout_mode = 1
+offset_right = 110.0
+offset_bottom = 140.0
+
+[node name="Sprite2D" type="Sprite2D" parent="ScrollContainer/VBoxContainer/narc2_entry/MarginContainer"]
+position = Vector2(-5, 19)
+scale = Vector2(1.16901, 1.31944)
+texture = ExtResource("4_k8arj")
+centered = false
+
+[node name="Label" type="Label" parent="ScrollContainer/VBoxContainer/narc2_entry/MarginContainer"]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_colors/font_color = Color(0.0627451, 0.113725, 0.411765, 1)
+theme_override_fonts/font = ExtResource("2_so0fs")
+theme_override_font_sizes/font_size = 30
+
+[node name="Flower narc2" parent="ScrollContainer/VBoxContainer/narc2_entry/MarginContainer" groups=["flowers"] instance=ExtResource("12_xmack")]
+position = Vector2(32, -14)
+rotation = 0.356079
+scale = Vector2(0.35, 0.35)
+
+[node name="tul1_entry" type="Control" parent="ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(110, 140)
+layout_mode = 2
+mouse_filter = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="ScrollContainer/VBoxContainer/tul1_entry"]
+custom_minimum_size = Vector2(110, 140)
+layout_mode = 1
+offset_right = 110.0
+offset_bottom = 140.0
+
+[node name="Sprite2D" type="Sprite2D" parent="ScrollContainer/VBoxContainer/tul1_entry/MarginContainer"]
+position = Vector2(-5, 19)
+scale = Vector2(1.16901, 1.31944)
+texture = ExtResource("4_k8arj")
+centered = false
+
+[node name="Label" type="Label" parent="ScrollContainer/VBoxContainer/tul1_entry/MarginContainer"]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_colors/font_color = Color(0.0627451, 0.113725, 0.411765, 1)
+theme_override_fonts/font = ExtResource("2_so0fs")
+theme_override_font_sizes/font_size = 30
+
+[node name="Flower tul1" parent="ScrollContainer/VBoxContainer/tul1_entry/MarginContainer" groups=["flowers"] instance=ExtResource("13_tlbdh")]
+position = Vector2(30, -4)
+rotation = 0.366082
+scale = Vector2(0.35, 0.35)
+
+[node name="tul2_entry" type="Control" parent="ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(110, 140)
+layout_mode = 2
+mouse_filter = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="ScrollContainer/VBoxContainer/tul2_entry"]
+custom_minimum_size = Vector2(110, 140)
+layout_mode = 1
+offset_right = 110.0
+offset_bottom = 140.0
+
+[node name="Sprite2D" type="Sprite2D" parent="ScrollContainer/VBoxContainer/tul2_entry/MarginContainer"]
+position = Vector2(-5, 19)
+scale = Vector2(1.16901, 1.31944)
+texture = ExtResource("4_k8arj")
+centered = false
+
+[node name="Label" type="Label" parent="ScrollContainer/VBoxContainer/tul2_entry/MarginContainer"]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_colors/font_color = Color(0.0627451, 0.113725, 0.411765, 1)
+theme_override_fonts/font = ExtResource("2_so0fs")
+theme_override_font_sizes/font_size = 30
+
+[node name="Flower tul2" parent="ScrollContainer/VBoxContainer/tul2_entry/MarginContainer" groups=["flowers"] instance=ExtResource("14_4obv0")]
+position = Vector2(28, -1)
+rotation = 0.324513
+scale = Vector2(0.35, 0.35)
+
+[node name="tul3_entry" type="Control" parent="ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(110, 140)
+layout_mode = 2
+mouse_filter = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="ScrollContainer/VBoxContainer/tul3_entry"]
+custom_minimum_size = Vector2(110, 140)
+layout_mode = 1
+offset_right = 110.0
+offset_bottom = 140.0
+
+[node name="Sprite2D" type="Sprite2D" parent="ScrollContainer/VBoxContainer/tul3_entry/MarginContainer"]
+position = Vector2(-5, 19)
+scale = Vector2(1.16901, 1.31944)
+texture = ExtResource("4_k8arj")
+centered = false
+
+[node name="Label" type="Label" parent="ScrollContainer/VBoxContainer/tul3_entry/MarginContainer"]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_colors/font_color = Color(0.0627451, 0.113725, 0.411765, 1)
+theme_override_fonts/font = ExtResource("2_so0fs")
+theme_override_font_sizes/font_size = 30
+
+[node name="Flower tul3" parent="ScrollContainer/VBoxContainer/tul3_entry/MarginContainer" groups=["flowers"] instance=ExtResource("15_mjdh1")]
+position = Vector2(26, 3)
+rotation = 0.304212
+scale = Vector2(0.35, 0.35)
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Dress" to="." method="_on_dress_pressed"]

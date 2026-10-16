@@ -1,0 +1,29 @@
+[gd_scene load_steps=9 format=3 uid="uid://c605tpqvap6l8"]
+
+[ext_resource type="Texture2D" uid="uid://b6w61i0lsbcu1" path="res://images/Background_Arranging.png" id="1_46gi4"]
+[ext_resource type="Script" path="res://arranging_table.gd" id="1_i728m"]
+[ext_resource type="PackedScene" uid="uid://dcmdugg450s0" path="res://ui_arranging.tscn" id="3_5scdb"]
+[ext_resource type="PackedScene" uid="uid://dqrowkh0f65u4" path="res://vase1_3spots.tscn" id="3_d7psn"]
+[ext_resource type="PackedScene" uid="uid://cv8qk038soej8" path="res://vase2_1spot.tscn" id="3_l0cat"]
+[ext_resource type="PackedScene" uid="uid://r40iqhwbxsx7" path="res://vase4_5spots.tscn" id="6_2ichr"]
+[ext_resource type="PackedScene" uid="uid://b3j7re4hesn1g" path="res://vase_select.tscn" id="6_vaump"]
+[ext_resource type="PackedScene" uid="uid://dvung0lcyol2w" path="res://vase3_3spots.tscn" id="7_1gv4f"]
+
+[node name="arranging_table" type="Node2D"]
+script = ExtResource("1_i728m")
+
+[node name="Background" type="Sprite2D" parent="."]
+texture = ExtResource("1_46gi4")
+centered = false
+
+[node name="Vase1_3spots" parent="." groups=["vases"] instance=ExtResource("3_d7psn")]
+
+[node name="Vase2_1spot" parent="." groups=["vases"] instance=ExtResource("3_l0cat")]
+
+[node name="Vase3_3spots" parent="." groups=["vases"] instance=ExtResource("7_1gv4f")]
+
+[node name="Vase4_5spots" parent="." groups=["vases"] instance=ExtResource("6_2ichr")]
+
+[node name="UI_arranging" parent="." instance=ExtResource("3_5scdb")]
+
+[node name="vase_select" parent="." instance=ExtResource("6_vaump")]

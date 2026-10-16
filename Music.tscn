@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://bb05u7eahclpf"]
+
+[ext_resource type="AudioStream" uid="uid://gawsr0em4y1n" path="res://Sound/Easter Music - Blissful Butterflies (Loopable).mp3" id="1_gc53s"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_gc53s")
+volume_db = -12.0
+autoplay = true
+parameters/looping = true
